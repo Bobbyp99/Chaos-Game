@@ -18,6 +18,7 @@ int main()
 	
 	vector<Vector2f> vertices;
 	vector<Vector2f> points;
+	double randomVertex = rand() % 3;
 
 	while (window.isOpen())
 	{
@@ -69,8 +70,12 @@ int main()
 		{
 		    ///generate more point(s)
 		    ///select random vertex
+		    randomVertex = rand() % 3;
 		    ///calculate midpoint between random vertex and the last point in the vector
 		    ///push back the newly generated coord.
+		    double midpointX = 
+		    double midpointY = 
+		    points.push_back(Vector2f(midpointX, midpointY);
 		}
 	
 		/*
