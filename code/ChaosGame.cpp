@@ -33,8 +33,8 @@ int main()
 	//Declarations
 	vector<Vector2f> vertices;
 	vector<Vector2f> points;
-	double randomVertex = rand() % 3;
-	double randomPrev = randomVertex;
+	//double randomVertex = rand() % 3;                 //Doesn't work?
+	//double randomPrev = randomVertex;		    //Doesn't work?   See line 95
 
 	while (window.isOpen())
 	{
@@ -88,11 +88,14 @@ int main()
 		    ///select random vertex
 		    
 		    double count = points.size() - 1;
-		    while (randomVertex == randomPrev)
-		    {
-			    randomVertex = rand() % 3;
-		    }
-		    randomPrev = randomVertex;
+		    //while (randomVertex == randomPrev)
+		   // {
+			 double randomVertex = rand() % 3;
+		   // }
+		  //  randomPrev = randomVertex;       //For some reason the fractal doesn't work properly if I declare randomVertex and randomPrev stuff above
+							// I thought I needed the previous vertex so that I could confirm no match between the last and current vertex
+							// But it works perfectly like this? Didn't find out why yet but just glad it works
+			
 		    ///calculate midpoint between random vertex and the last point in the vector
 		    ///push back the newly generated coord.
 		    double midpointX = (vertices.at(randomVertex).x + points.at(count).x) * 0.5;
