@@ -33,11 +33,9 @@ int main()
 	//Declarations
 	vector<Vector2f> vertices;
 	vector<Vector2f> points;
-	int numVertices;
-	double randomVertex = rand() % numVertices;
-	double randomPrev = randomVertex;
+	double randomVertex = rand() % 5;                 
+	double randomPrev = randomVertex;		   
 
-	bool vertChoice = true; 
 	while (window.isOpen())
 	{
 		/*
@@ -45,21 +43,6 @@ int main()
 		Handle the players input
 		****************************************
 		*/
-		bool vertChoice = true;
-		if (vertChoice)
-		{
-   			 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3) ||
-    		         sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad3))
-   			 {
-  		             numVertices = 3;
-   			     vertChoice = false;
-   			 }
-  			  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4) ||
-   			     sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4))
-   			 {
-     			     numVertices = 4;
-     			     vertChoice = false;
-   			 }
 		Event event;
 		while (window.pollEvent(event))
 		{
@@ -76,7 +59,7 @@ int main()
 			    std::cout << "mouse x: " << event.mouseButton.x << std::endl;
 			    std::cout << "mouse y: " << event.mouseButton.y << std::endl;
 	
-			    if(vertices.size() < 3)
+			    if(vertices.size() < 5)
 			    {
 				vertices.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));
 			    }
@@ -107,9 +90,9 @@ int main()
 		    double count = points.size() - 1;
 		    while (randomVertex == randomPrev)
 		    {
-			 randomVertex = rand() % numVertices;
+			double randomVertex = rand() % 5;
 		    }
-		   randomPrev = randomVertex;      
+		    randomPrev = randomVertex;    
 			
 		    ///calculate midpoint between random vertex and the last point in the vector
 		    ///push back the newly generated coord.
