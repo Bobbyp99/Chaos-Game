@@ -19,7 +19,14 @@ int main()
 	//Text and Font
 	Text text;
 	Font font;
-	if (!font.loadFromFile(
+	if (!font.loadFromFile("CookieCrisp-L36ly.ttf")
+	{
+		thow("Font failed to load";
+	}
+	text.setFont(font);
+	text.setCharacterSize(16);
+	text.setColor(Color::Blue);
+	text.setString("1. Left click 3 points to outline a triangle \n << endl << "2. Left click one more time in the encompassed outline");
 
 	
 
