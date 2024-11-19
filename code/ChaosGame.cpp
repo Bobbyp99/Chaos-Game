@@ -19,7 +19,7 @@ int main()
 	//Text and Font
 	Text text;
 	Font font;
-	if (!font.loadFromFile("CookieCrisp-L36ly.ttf"))
+	if (!font.loadFromFile("LoveDays-2v7Oe.ttf"))
 	{
 		throw("Font failed to load");
 	}
