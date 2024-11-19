@@ -17,7 +17,9 @@ int main()
 	RenderWindow window(vm, "Chaos Game!!", Style::Default);
 
 	//Text and Font
-	
+	Text text;
+	Font font;
+	if (!font.loadFromFile(
 
 	
 
