@@ -73,11 +73,15 @@ int main()
 		    ///select random vertex
 		    randomVertex = rand() % 3;
 		    double count = points.size() - 1;
+		    while (randomVertex == randomPrev)
+		    {
+			    randomVetex = rand() % 3;
+		    }
 		    ///calculate midpoint between random vertex and the last point in the vector
 		    ///push back the newly generated coord.
-		    double midpointX = (randomVertex + points.at.x) / 2;
-		    double midpointY = 
-		    points.push_back(Vector2f(midpointX, midpointY);
+		    double midpointX = (vertices.at[randomVertex].x + points.at[count].x) / 2;
+		    double midpointY = (vertices.at[randomVertex].y + points.at[count].y) / 2;
+		    points.push_back(Vector2f(midpointX, midpointY));
 		}
 	
 		/*
