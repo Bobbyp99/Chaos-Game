@@ -15,7 +15,13 @@ int main()
 	VideoMode vm(1920, 1080);
 	// Create and open a window for the game
 	RenderWindow window(vm, "Chaos Game!!", Style::Default);
+
+	//Text and Font
 	
+
+	
+
+	//Declarations
 	vector<Vector2f> vertices;
 	vector<Vector2f> points;
 	double randomVertex = rand() % 3;
@@ -75,8 +81,9 @@ int main()
 		    double count = points.size() - 1;
 		    while (randomVertex == randomPrev)
 		    {
-			    randomVetex = rand() % 3;
+			    randomVertex = rand() % 3;
 		    }
+		    randomPrev = randomVertex;
 		    ///calculate midpoint between random vertex and the last point in the vector
 		    ///push back the newly generated coord.
 		    double midpointX = (vertices.at[randomVertex].x + points.at[count].x) / 2;
@@ -97,6 +104,14 @@ int main()
 		    rect.setFillColor(Color::Blue);
 		    window.draw(rect);
 		}
+		for(int i = 0; i < vertices.size(); i++)
+		{
+		    RectangleShape rect(Vector2f(10,10));
+		    rect.setPosition(Vector2f(points[i].x, points[i].y));
+		    rect.setFillColor(Color::Blue);
+		    window.draw(rect);
+		}
+		window.draw(text);
 		window.display();
 	}
 }
