@@ -19,9 +19,9 @@ int main()
 	//Text and Font
 	Text text;
 	Font font;
-	if (!font.loadFromFile("CookieCrisp-L36ly.ttf")
+	if (!font.loadFromFile("CookieCrisp-L36ly.ttf"))
 	{
-		thow("Font failed to load");
+		throw("Font failed to load");
 	}
 	text.setFont(font);
 	text.setCharacterSize(16);
