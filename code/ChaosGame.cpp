@@ -86,7 +86,7 @@ int main()
 		{
 		    ///generate more point(s)
 		    ///select random vertex
-		    randomVertex = rand() % 3;
+		    
 		    double count = points.size() - 1;
 		    while (randomVertex == randomPrev)
 		    {
@@ -95,8 +95,8 @@ int main()
 		    randomPrev = randomVertex;
 		    ///calculate midpoint between random vertex and the last point in the vector
 		    ///push back the newly generated coord.
-		    double midpointX = (vertices.at[randomVertex].x + points.at[count].x) / 2;
-		    double midpointY = (vertices.at[randomVertex].y + points.at[count].y) / 2;
+		    double midpointX = (vertices.at(randomVertex).x + points.at(count).x) * 0.5;
+		    double midpointY = (vertices.at(randomVertex).y + points.at(count).y) * 0.5;
 		    points.push_back(Vector2f(midpointX, midpointY));
 		}
 	
@@ -106,6 +106,7 @@ int main()
 		****************************************
 		*/
 		window.clear();
+		window.draw(text);
 		for(int i = 0; i < vertices.size(); i++)
 		{
 		    RectangleShape rect(Vector2f(10,10));
@@ -120,7 +121,6 @@ int main()
 		    rect.setFillColor(Color::Blue);
 		    window.draw(rect);
 		}
-		window.draw(text);
 		window.display();
 	}
 }
